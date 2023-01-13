@@ -5,7 +5,7 @@ public class MenuItem {
     private double price;
     private String description;
     private String category;
-    private Date dateInitialized = new Date();
+    private Date dateInitialized;
 
     public double getPrice() {
         return price;
@@ -43,5 +43,6 @@ public class MenuItem {
         this.price = price;
         this.description = description;
         this.category = category;
+        this.dateInitialized = new Date();
     }
 }
