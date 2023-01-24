@@ -1,5 +1,6 @@
 package org.java.launchcode.studios.chapter4;
 import java.util.Date;
+import java.util.Objects;
 
 public class MenuItem {
     private double price;
@@ -46,4 +47,26 @@ public class MenuItem {
         this.dateInitialized = dateInitialized;
     }
 
+    @Override
+    public String toString() {
+        return "\n***MenuItem***" +
+                "\nPrice: " + price +
+                "\nDescription: " + description +
+                "\nType: " + category +
+                "\nDate Created: " + dateInitialized +
+                "\n************";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return Double.compare(menuItem.price, price) == 0 && description.equals(menuItem.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(price, description);
+    }
 }

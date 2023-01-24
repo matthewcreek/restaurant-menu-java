@@ -16,8 +16,20 @@ public class Menu {
     }
 
     public void addItem(MenuItem food) {
+        for (int i = 0; i < menu.size(); i++) {
+            if (menu.get(i).equals(food)) {
+                System.out.println("\nThe food item is already part of the menu.\n");
+                return;
+            }
+        }
         menu.add(food);
-        updatedLast = "The menu was last updated on: " + new Date();
+        updatedLast = "\nThe menu was last updated on: " + new Date();
+    }
+
+    public void removeItem(MenuItem food) {
+        int foodToRemove = menu.indexOf(food);
+        menu.remove(foodToRemove);
+        updatedLast = "\nThe menu was last updated on: " + new Date();
     }
 
     public void printMenu() {
