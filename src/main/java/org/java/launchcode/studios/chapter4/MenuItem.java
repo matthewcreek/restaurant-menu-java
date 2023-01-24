@@ -7,6 +7,13 @@ public class MenuItem {
     private String category;
     private Date dateInitialized;
 
+    public MenuItem(double price, String description, String category) {
+        this.price = price;
+        this.description = description;
+        this.category = category;
+        this.dateInitialized = new Date();
+    }
+
     public double getPrice() {
         return price;
     }
@@ -39,10 +46,4 @@ public class MenuItem {
         this.dateInitialized = dateInitialized;
     }
 
-    public MenuItem(double price, String description, String category) {
-        this.price = price;
-        this.description = description;
-        this.category = category;
-        this.dateInitialized = new Date();
-    }
 }
